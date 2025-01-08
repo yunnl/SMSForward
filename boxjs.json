@@ -274,6 +274,120 @@
         "https://raw.githubusercontent.com/ChinaTelecomOperators/SMSForward/main/asset/1.png",
         "https://raw.githubusercontent.com/ChinaTelecomOperators/SMSForward/main/asset/1.png"
       ]
+    },
+    {
+      "id": "ChinaTelecomOperators.sms_forward-2",
+      "name": "短信转发(2)",
+      "descs_html": [
+        "<a href=\"https://github.com/ChinaTelecomOperators/SMSForward\">查看文档</a>",
+        "<a onClick=\"window.location.reload(true);\">刷新</a>"
+      ],
+      "keys": [
+        "@ChinaTelecomOperators.sms_forward-2.disabled",
+        "@ChinaTelecomOperators.sms_forward-2.sender_allow",
+        "@ChinaTelecomOperators.sms_forward-2.sender_deny",
+        "@ChinaTelecomOperators.sms_forward-2.text_allow",
+        "@ChinaTelecomOperators.sms_forward-2.text_deny",
+        "@ChinaTelecomOperators.sms_forward-2.code_test",
+        "@ChinaTelecomOperators.sms_forward-2.code_get",
+        "@ChinaTelecomOperators.sms_forward-2.title",
+        "@ChinaTelecomOperators.sms_forward-2.subtitle",
+        "@ChinaTelecomOperators.sms_forward-2.body",
+        "@ChinaTelecomOperators.sms_forward-2.pushdeer",
+        "@ChinaTelecomOperators.sms_forward-2.bark"
+      ],
+      "author": "ChinaTelecomOperators",
+      "repo": "https://github.com/ChinaTelecomOperators/SMSForward",
+      "settings": [
+        {
+          "id": "@ChinaTelecomOperators.sms_forward-2.disabled",
+          "name": "禁用",
+          "val": false,
+          "type": "boolean",
+          "desc": "默认启用"
+        },
+        {
+          "id": "@ChinaTelecomOperators.sms_forward-2.sender_allow",
+          "name": "允许转发的号码的正则字符串",
+          "val": "",
+          "type": "textarea",
+          "desc": "符合的号码才会转发 例: (18600000000|18611111111) 表示只转发这两个号码. ^186 表示只转发186开头的号码. ^\\d{11}$ 表示只转发11位的号码. 默认为空 允许转发所有号码"
+        },
+        {
+          "id": "@ChinaTelecomOperators.sms_forward-2.sender_deny",
+          "name": "不允许转发的号码的正则字符串",
+          "val": "",
+          "type": "textarea",
+          "desc": "符合的号码不会转发 其他的号码都会转发"
+        },
+        {
+          "id": "@ChinaTelecomOperators.sms_forward-2.text_allow",
+          "name": "允许转发的内容的正则字符串",
+          "val": "",
+          "type": "textarea",
+          "desc": "符合的内容才会转发 例: (码|快递) 表示只允许这包含这俩词的内容. 默认为空 允许转发所有内容"
+        },
+        {
+          "id": "@ChinaTelecomOperators.sms_forward-2.text_deny",
+          "name": "不允许转发的内容的正则字符串",
+          "val": "",
+          "type": "textarea",
+          "desc": "符合的内容不会转发 其他的内容都会转发"
+        },
+        {
+          "id": "@ChinaTelecomOperators.sms_forward-2.code_test",
+          "name": "判断内容是否包含验证码的正则字符串",
+          "val": "",
+          "type": "textarea",
+          "desc": "验证码提取逻辑没有很好的思路 现在需要先判断该内容是否有验证码 再提取验证码. 默认为 .+(码) 表示内容符合 'X码' 这样的格式"
+        },
+        {
+          "id": "@ChinaTelecomOperators.sms_forward-2.code_get",
+          "name": "从内容提取验证码的正则字符串",
+          "val": "",
+          "type": "textarea",
+          "desc": "提取的验证码将作为可复制的内容 方便 Bark 复制. 默认为 \\d{4,6} 表示提取4-6位的数字"
+        },
+        {
+          "id": "@ChinaTelecomOperators.sms_forward-2.title",
+          "name": "通知标题模板",
+          "val": "",
+          "type": "text",
+          "desc": "默认: [号码], 例: 10010"
+        },
+        {
+          "id": "@ChinaTelecomOperators.sms_forward-2.subtitle",
+          "name": "通知副标题模板",
+          "val": "",
+          "type": "text",
+          "desc": "默认: [码][复制提示], 例: 123456(长按/下拉复制验证码)"
+        },
+        {
+          "id": "@ChinaTelecomOperators.sms_forward-2.body",
+          "name": "通知正文模板",
+          "val": "",
+          "type": "textarea",
+          "desc": "默认: [内容], 例: 您的验证码为 123456"
+        },
+        {
+          "id": "@ChinaTelecomOperators.sms_forward-2.bark",
+          "name": "转发到 Bark/自建服务端 等",
+          "val": "",
+          "type": "textarea",
+          "desc": "[推送标题], [推送内容], [复制内容] 会被自动替换. 形如 https://api.day.app/XXXXXXXXX/[推送标题]/[推送内容]?group=sms&autoCopy=1&isArchive=1&icon=https%3A%2F%2Fraw.githubusercontent.com%2FChinaTelecomOperators%2Fscripts%2Fmain%2Fsurge%2Fmodules%2Fsms-forward%2Fasset%2F1.png&copy=[复制内容]"
+        },
+        {
+          "id": "@ChinaTelecomOperators.sms_forward-2.pushdeer",
+          "name": "转发到 PushDeer/PushPlus 等",
+          "val": "",
+          "type": "textarea",
+          "desc": "[推送全文] 会被自动替换. 形如 https://api2.pushdeer.com/message/push?pushkey=XXXXXXXXXXX&text=[推送全文]"
+        }
+      ],
+      "icons": [
+        "https://raw.githubusercontent.com/ChinaTelecomOperators/SMSForward/main/asset/1.png",
+        "https://raw.githubusercontent.com/ChinaTelecomOperators/SMSForward/main/asset/1.png"
+      ]
     }
   ]
 }
